@@ -1,0 +1,37 @@
+What are Stop Words?
+By Kavita Ganesan    / Text Mining Concepts a
+When working with text mining applications, we often hear of the term “stop words” or “stop word list” or even “stop list”. Stop words are basically a set of commonly used words in any language, not just English.
+
+The reason why stop words are critical to many applications is that, if we remove the words that are very commonly used in a given language, we can focus on the important words instead. For example, in the context of a search engine, if your search query is “how to develop information retrieval applications”, If the search engine tries to find web pages that contained the terms “how”, “to” “develop”, “information”, ”retrieval”, “applications” the search engine is going to find a lot more pages that contain the terms “how”, “to” than pages that contain information about developing information retrieval applications because the terms “how” and “to” are so commonly used in the English language. If we disregard these two terms, the search engine can actually focus on retrieving pages that contain the keywords: “develop” “information” “retrieval” “applications” – which would bring up pages that are actually of interest. This is just the basic intuition for using stop words.
+
+Stop words can be used in a whole range of tasks and here are a few:
+
+Supervised machine learning – removing stop words from the feature space
+Clustering – removing stop words prior to generating clusters
+Information retrieval – preventing stop words from being indexed
+Text summarization- excluding stop words from contributing to summarization scores & removing stop words when computing ROUGE scores
+Types of Stop Words
+Stop words are generally thought to be a “single set of words”. It really can mean different things to different applications. For example, in some applications removing all stop words right from determiners (e.g. the, a, an) to prepositions (e.g. above, across, before) to some adjectives (e.g. good, nice) can be an appropriate stop word list. To some applications however, this can be detrimental. For instance, in sentiment analysis removing adjective terms such as ‘good’ and ‘nice’ as well as negations such as ‘not’ can throw algorithms off their tracks. In such cases, one can choose to use a minimal stop list consisting of just determiners or determiners with prepositions or just coordinating conjunctions depending on the needs of the application.Examples of minimal stop word lists that you can use:
+
+Determiners – Determiners tend to mark nouns where a determiner usually will be followed by a noun
+examples: the, a, an, another
+Coordinating conjunctions – Coordinating conjunctions connect words, phrases, and clauses
+examples: for, an, nor, but, or, yet, so
+Prepositions – Prepositions express temporal or spatial relations
+examples: in, under, towards, before
+In some domain specific cases, such as clinical texts, we may want a whole different set of stop words. For example, terms like “mcg” “dr” and “patient” may have less discriminating power in building intelligent applications compared to terms such as ‘heart’ ‘failure’ and ‘diabetes’. In such cases, we can also construct domain specific stop words as opposed to using a published stop word list.
+
+What About Stop Phrases?
+Stop phrases are just like stop words just that instead of removing individual words, you exclude phrases. For example, if the phrase “good item” appears very frequently in your text but has a very low discriminating power or results in unwanted behavior in your results, one may choose to add such phrases as stop phrases. It is certainly possible to construct “stop phrases” the same way you construct stop words. For example, you can treat phrases with very low occurrence in your corpora as stop phrases. Similarly, you can consider phrases that occur in almost every document in your corpora as a stop phrase.
+
+Published Stop Word Lists
+
+
+If you want to use stop words lists that have been published here are a few that you could use:
+
+Snowball stop word list – this stop word list is published with the Snowball Stemmer
+Terrier stop word list – this is a pretty comprehensive stop word list published with the Terrier package.
+Minimal stop word list – this is a stop word list that I compiled consisting of determiners, coordinating conjunctions and prepositions
+Construct your own stop word list – this article basically outlines an automatic method for constructing a stop word list for your specific data set (e.g. tweets, clinical texts, etc)
+Constructing Domain Specific Stop Word Lists
+While it is fairly  to use a published set of stop words, in many cases, using such stop words is completely insufficient for certain applications. For example, in clinical texts, terms like “mcg” “dr.” and “patient” occur almost in every document that you come across. So, these terms may be regarded as potential stop words for clinical text mining and retrieval. Similarly, for tweets, terms like “#” “RT”, “@username” can be potentially regarded as stop words. The common language specific stop word list generally DOES NOT cover such domain specific terms. Here is an article that I wrote that talks about how to construct domain specific stop word lists.
