@@ -1,5 +1,11 @@
 # Bestway Navigator Algorithm
-An application that we developed to find the best and shortest way to go in a specific direction based on the reviews and distance data.
+The navigation system is intended for suggesting the best optimized route when travelling to a specific destination. In an everyday-life situation, many people use the public transportation service to travel to places, either for business, travelling, visiting someone. The system plays an important role to make our life easier.
+
+This system is made with that idea in mind. The main function of this system is to calculate the best optimized route based on the distance of the starting stop to the destination and the sentiment analysis. 
+
+First, the system will make the graph with the stops acting as vertices and distance acts as edges, then the system will choose the shortest route among them. This system will also identify the sentiment each stops in the route based on latest articles, reviews and it will extract the positive and negative words, then count the frequency of those words. It will also make a histogram graph for each stop to increase readability.
+Next, the system will choose the best route from the combination of the shortest
+distance and the current sentiment for each route. Lastly, the system will rank from least recommended to best recommended route and will display the best recommended (most optimized) route.
 
 ## Problem to Solve
 Problem 1: Malaysia has developed an integrated public transportation network which provides multiple options to passenger. Passenger may take the furthest route due to the lack of information on determining the combination of public transportation to get to their destination.
